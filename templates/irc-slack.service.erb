@@ -1,0 +1,12 @@
+[Unit]
+Description=IRC-to-Slack gateway
+After=network.target
+Documentation=<%= @soucre %>
+
+[Service]
+User=<%= @user %>
+ExecStart=/usr/local/bin/irc-slack <% if @debug -%>-D <% end -%>-H <%= @listen %> -p <%= @port %> -s <%= @server_name %>
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
