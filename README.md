@@ -1,0 +1,1 @@
+# puppet-irc_slack
