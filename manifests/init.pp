@@ -27,7 +27,7 @@ class irc_slack (
         source   => $source,
         provider => git,
         user     => $user,
-        revision => 'master'
+        revision => $branch,
         require  => File[$source_dir],
     }
     exec{'go build':
