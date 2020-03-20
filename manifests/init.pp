@@ -1,4 +1,13 @@
 # @summary install https://github.com/insomniacslk/irc-slack
+# @param source_dir directory to download and managed the source code
+# @param home_dir the home directory for the irc-slack user
+# @param user the user to run irc-slack as
+# @param listen the ip address for irc-slack to listen on
+# @param port the port or irc-slack to listen on
+# @param server_name the server name irc-slack sends to irc
+# @param source the location of the irc-slack git repo
+# @param branch the bit branch to use when downloading irc-slack
+# @param log_level the log_level to run irc-slack as
 class irc_slack (
     Stdlib::Unixpath    $source_dir  = '/usr/local/src/irc-slack',
     Stdlib::Unixpath    $home_dir    = '/var/lib/irc-slack',
