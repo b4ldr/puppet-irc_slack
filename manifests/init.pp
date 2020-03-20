@@ -7,6 +7,7 @@ class irc_slack (
     Stdlib::Port        $port        = 6666,
     Stdlib::Fqdn        $server_name = $facts['networking']['fqdn'],
     Stdlib::HTTPUrl     $source      = 'https://github.com/insomniacslk/irc-slack.git',
+    String              $branch      = 'master',
     Irc_slack::Loglevel $loglevel    = 'warn',
 ) {
     ensure_packages(['golang'])
@@ -26,6 +27,7 @@ class irc_slack (
         source   => $source,
         provider => git,
         user     => $user,
+        revision => 'master'
         require  => File[$source_dir],
     }
     exec{'go build':
