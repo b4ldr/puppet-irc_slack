@@ -9,7 +9,7 @@
 
 **Data types**
 
-* [`Irc_slack::Loglevel`](#irc_slackloglevel): 
+* [`Irc_slack::Loglevel`](#irc_slackloglevel): allowed loglevels
 
 ## Classes
 
@@ -97,7 +97,7 @@ Default value: 'warn'
 
 ### Irc_slack::Loglevel
 
-The Irc_slack::Loglevel data type.
+allowed loglevels
 
 Alias of `Enum['error', 'warn', 'info', 'debug']`
 
