@@ -8,7 +8,7 @@ class irc_slack (
     Stdlib::Fqdn        $server_name = $facts['networking']['fqdn'],
     Stdlib::HTTPUrl     $source      = 'https://github.com/insomniacslk/irc-slack.git',
     String              $branch      = 'master',
-    Irc_slack::Loglevel $loglevel    = 'warn',
+    Irc_slack::Loglevel $log_level   = 'warn',
 ) {
     ensure_packages(['golang'])
     user {$user:

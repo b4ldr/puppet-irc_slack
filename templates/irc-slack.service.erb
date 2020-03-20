@@ -5,7 +5,7 @@ Documentation=<%= @soucre %>
 
 [Service]
 User=<%= @user %>
-ExecStart=/usr/local/bin/irc-slack -L <%= @loglevel %> -H <%= @listen %> -p <%= @port %> -s <%= @server_name %>
+ExecStart=/usr/local/bin/irc-slack -L <%= @log_level %> -H <%= @listen %> -p <%= @port %> -s <%= @server_name %>
 Restart=always
 
 [Install]
