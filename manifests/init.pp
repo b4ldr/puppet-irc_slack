@@ -5,10 +5,10 @@ class irc_slack (
     String              $user        = 'irc-slack',
     Stdlib::IP::Address $listen      = '127.0.0.1',
     Stdlib::Port        $port        = 6666,
-    Boolean             $debug       = false,
     Stdlib::Fqdn        $server_name = $facts['networking']['fqdn'],
+    Stdlib::HTTPUrl     $source      = 'https://github.com/insomniacslk/irc-slack.git',
+    Irc_slack::Loglevel $loglevel    = 'warn',
 ) {
-    $source = 'https://github.com/insomniacslk/irc-slack.git'
     ensure_packages(['golang'])
     user {$user:
         ensure     => present,
@@ -22,7 +22,7 @@ class irc_slack (
         owner  => $user,
     }
     vcsrepo {$source_dir:
-        ensure   => present,
+        ensure   => latest,
         source   => $source,
         provider => git,
         user     => $user,
